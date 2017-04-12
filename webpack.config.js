@@ -2,11 +2,13 @@ var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-    entry: './src/index.js',
+    entry: {
+        "main":'./src/index.js'
+    },
     output: {
         path: __dirname + '/dist',
         publicPath: '/',
-        filename: 'bundle.js'
+        filename: '[name].js'
     },
     module: {
         loaders: [{
@@ -20,6 +22,7 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             template: './src/index.html',
+            chunks:['main'],
             filename: 'index.html',
             inject: 'body'
         })
