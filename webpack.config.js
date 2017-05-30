@@ -1,5 +1,6 @@
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var path = require('path');
 
 module.exports = {
     entry: {
@@ -18,6 +19,14 @@ module.exports = {
         },{
             test: /\.css$/, loader: 'style-loader!css-loader'
         }]
+    },
+    resolve: {
+        extensions: ['', '.js', '.jsx'],
+        alias: {
+            Components: path.resolve(__dirname, 'src/components'),
+            Action: path.resolve(__dirname, 'src/action'),
+            Reducer: path.resolve(__dirname, 'src/reducer')
+        }
     },
     plugins: [
         new HtmlWebpackPlugin({
