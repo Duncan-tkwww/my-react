@@ -24,8 +24,10 @@ module.exports = {
         extensions: ['', '.js', '.jsx'],
         alias: {
             Components: path.resolve(__dirname, 'src/components'),
-            Action: path.resolve(__dirname, 'src/action'),
-            Reducer: path.resolve(__dirname, 'src/reducer')
+            Actions: path.resolve(__dirname, 'src/actions'),
+            Reducers: path.resolve(__dirname, 'src/reducer'),
+            Constants: path.resolve(__dirname, 'src/constants'),
+            Fixtures: path.resolve(__dirname, 'src/fixtures')
         }
     },
     plugins: [
